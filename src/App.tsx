@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 function App() {
   useEffect(() => {
     // Update the document title
-    document.title = 'John Doe | Portfolio';
+    document.title = 'Portofolio Rafli';
 
     // Add background grid pattern
     const style = document.createElement('style');
