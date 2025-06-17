@@ -22,12 +22,12 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus('success');
-      
+
       // Reset form
       setFormState({
         name: '',
@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
         subject: '',
         message: ''
       });
-      
+
       // Reset status after 5 seconds
       setTimeout(() => {
         setSubmitStatus(null);
@@ -58,28 +58,28 @@ const Contact: React.FC = () => {
           {/* Contact Form */}
           <div className="bg-gray-50 p-8 rounded-lg shadow-md">
             <h3 className="text-2xl font-bold mb-6 text-gray-800">Send Me a Message</h3>
-            
+
             {submitStatus === 'success' && (
               <div className="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative">
                 <strong className="font-bold">Thanks for reaching out!</strong>
                 <span className="block sm:inline"> I'll get back to you as soon as possible.</span>
               </div>
             )}
-            
+
             {submitStatus === 'error' && (
               <div className="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
                 <strong className="font-bold">Oops!</strong>
                 <span className="block sm:inline"> Something went wrong. Please try again later.</span>
               </div>
             )}
-            
+
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label htmlFor="name" className="block text-gray-700 text-sm font-medium mb-2">Your Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
                   value={formState.name}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
@@ -87,13 +87,13 @@ const Contact: React.FC = () => {
                   required
                 />
               </div>
-              
+
               <div className="mb-4">
                 <label htmlFor="email" className="block text-gray-700 text-sm font-medium mb-2">Your Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email" 
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
                   value={formState.email}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
@@ -101,13 +101,13 @@ const Contact: React.FC = () => {
                   required
                 />
               </div>
-              
+
               <div className="mb-4">
                 <label htmlFor="subject" className="block text-gray-700 text-sm font-medium mb-2">Subject</label>
-                <input 
-                  type="text" 
-                  id="subject" 
-                  name="subject" 
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
                   value={formState.subject}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
@@ -115,12 +115,12 @@ const Contact: React.FC = () => {
                   required
                 />
               </div>
-              
+
               <div className="mb-6">
                 <label htmlFor="message" className="block text-gray-700 text-sm font-medium mb-2">Your Message</label>
-                <textarea 
-                  id="message" 
-                  name="message" 
+                <textarea
+                  id="message"
+                  name="message"
                   value={formState.message}
                   onChange={handleChange}
                   rows={5}
@@ -129,12 +129,11 @@ const Contact: React.FC = () => {
                   required
                 ></textarea>
               </div>
-              
-              <button 
-                type="submit" 
-                className={`w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center ${
-                  isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
-                }`}
+
+              <button
+                type="submit"
+                className={`w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+                  }`}
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -154,11 +153,11 @@ const Contact: React.FC = () => {
               </button>
             </form>
           </div>
-          
+
           {/* Contact Information */}
           <div>
             <h3 className="text-2xl font-bold mb-6 text-gray-800">Contact Information</h3>
-            
+
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="mr-4 bg-blue-100 p-3 rounded-full text-blue-600">
@@ -176,7 +175,7 @@ const Contact: React.FC = () => {
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="mr-4 bg-blue-100 p-3 rounded-full text-blue-600">
                   <Mail size={24} />
@@ -186,7 +185,7 @@ const Contact: React.FC = () => {
                   <p className="text-gray-600">speedrafli64@gmail.com</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="mr-4 bg-blue-100 p-3 rounded-full text-blue-600">
                   <MapPin size={24} />
@@ -197,20 +196,6 @@ const Contact: React.FC = () => {
                 </div>
               </div>
             </div>
-            
-            {/* Map */}
-            <div className="mt-8 h-80 bg-gray-200 rounded-lg overflow-hidden shadow-md">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15813.81363278556!2d112.754037!3d-7.393225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1718367500000!5m2!1sid!2sid"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen="FullScreen"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Lokasi Saya"
-            ></iframe>
-          </div>
           </div>
         </div>
       </div>
